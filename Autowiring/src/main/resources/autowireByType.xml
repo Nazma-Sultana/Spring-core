@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- this code sets up necessary XML namespace to define and validate Spring beans -->
+
+    <bean id="specification" class="com.example.autowire.type.Specification">
+        <!-- setting the property using setters defined in Specification class-->
+        <property name="make" value="Toyota"></property>
+        <property name="model" value="Corolla"></property>
+    </bean>
+    <!--whatever the car clss needs dependencies autowire them by name-->
+    <bean id="myCar" class="com.example.autowire.type.Car" autowire="byType"/>
+
+
+
+
+</beans>
